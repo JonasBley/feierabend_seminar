@@ -1,0 +1,30 @@
+% Adaptation of Tao (2026), sections 5--8 and Figure 4.
+% Red: human responsibilities. Blue arrows: progress; dashed red: feedback.
+% Requires TikZ arrows.meta and the LeipzigClean palette.
+\begin{tikzpicture}[
+  stage/.style={draw=LeipzigBlue!60,line width=.6pt,fill=Soft,
+    rounded corners=1mm,text width=3.65cm,minimum height=1.43cm,
+    align=left,inner sep=2mm,font=\fontsize{9}{10.5}\selectfont},
+  flow/.style={-{Stealth[length=2mm]},draw=LeipzigBlue,line width=1pt},
+  feedback/.style={-{Stealth[length=1.6mm]},draw=granat,dashed,line width=.6pt}]
+  \node[stage] (q) at (0,0) {\textbf{1\quad Fragen}\\[1.5mm]
+    \textcolor{granat}{Menschen wählen Ziele}\\\textcolor{granat}{und Qualitätsmaßstäbe.}};
+  \node[stage] (r) at (4.65,0) {\textbf{2\quad Entwürfe}\\[1.5mm]
+    \textcolor{granat}{Menschen} und KI:\\Ideen, Code, Analysen};
+  \node[stage] (v) at (9.3,0) {\textbf{3\quad Evidenz}\\[1.5mm]
+    \textcolor{granat}{Menschen prüfen.}\\Tools helfen bei Tests.};
+  \node[stage] (e) at (9.3,-2.0) {\textbf{4\quad Verständnis}\\[1.5mm]
+    \textcolor{granat}{Menschen erklären}\\\textcolor{granat}{Befunde und Grenzen.}};
+  \node[stage] (a) at (4.65,-2.0) {\textbf{5\quad Anerkennung}\\[1.5mm]
+    \textcolor{granat}{Fachleute prüfen und}\\\textcolor{granat}{akzeptieren Ergebnisse.}};
+  \node[stage] (k) at (0,-2.0) {\textbf{6\quad Geteiltes Wissen}\\[1.5mm]
+    \textcolor{granat}{Die Gemeinschaft:}\\\textcolor{granat}{Theorie und Lehre}};
+  \draw[flow] (q) -- (r);
+  \draw[flow] (r) -- (v);
+  \draw[flow] (v) -- (e);
+  \draw[flow] (e) -- (a);
+  \draw[flow] (a) -- (k);
+  \draw[feedback] (k.north) -- node[right,font=\scriptsize,text=granat]{neue Fragen} (q.south);
+  \node[align=center,font=\small\bfseries,text=LeipzigBlue] at (4.65,-3.08)
+    {Mehr Output braucht mehr Verständnis, Review und Wissenspflege.};
+\end{tikzpicture}
